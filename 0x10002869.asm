@@ -293,7 +293,7 @@ main:
 	
 	;; initialization
 	MOV EAX, 004031A0h
-  MOVDQU XMM1, OWORD [EAX]
+  MOVDQU XMM1, [EAX]
  int3
   VPEXTRW ECX, XMM1, 0ach
 

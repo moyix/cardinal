@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 0h
  int3
-  ORPD XMM1, OWORD [EAX]
+  ORPD XMM1, [EAX]
 
 	;; store states and exit
 	int3

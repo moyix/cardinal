@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 0h
  int3
-  PCMPGTW XMM1, OWORD [EAX]
+  PCMPGTW XMM1, [EAX]
 
 	;; store states and exit
 	int3

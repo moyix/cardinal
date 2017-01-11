@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00000000h
  int3
-  VAESKEYGENASSIST XMM1, OWORD [EAX], 013h
+  VAESKEYGENASSIST XMM1, [EAX], 013h
 
 	;; store states and exit
 	int3

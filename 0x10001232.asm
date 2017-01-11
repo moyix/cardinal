@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00000000h
  int3
-  VDPPS XMM1, XMM2, OWORD [EAX], 13h
+  VDPPS XMM1, XMM2, [EAX], 13h
 
 	;; store states and exit
 	int3

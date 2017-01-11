@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00130000h
  int3
-  VAESENCLAST XMM0, XMM1, OWORD [EAX]
+  VAESENCLAST XMM0, XMM1, [EAX]
 
 	;; store states and exit
 	int3

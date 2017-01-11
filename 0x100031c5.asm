@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00501000h
  int3
-  PSRAD XMM1, OWORD [EAX]
+  PSRAD XMM1, [EAX]
 
 	;; store states and exit
 	int3

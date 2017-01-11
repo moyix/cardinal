@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00401000h
  int3
-  CVTDQ2PS XMM1, OWORD [EAX]
+  CVTDQ2PS XMM1, [EAX]
 
 	;; store states and exit
 	int3

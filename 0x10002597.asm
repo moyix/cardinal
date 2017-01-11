@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00501000h
  int3
-  PAND XMM1, OWORD [EAX]
+  PAND XMM1, [EAX]
 
 	;; store states and exit
 	int3

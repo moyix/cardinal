@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 0h
  int3
-  PSIGND XMM1, OWORD [EAX]
+  PSIGND XMM1, [EAX]
 
 	;; store states and exit
 	int3

@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 0h
  int3
-  PACKUSWB XMM1, OWORD [EAX]
+  PACKUSWB XMM1, [EAX]
 
 	;; store states and exit
 	int3

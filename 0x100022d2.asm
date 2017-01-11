@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00403019h
  int3
-  PABSW XMM1, OWORD [EAX]
+  PABSW XMM1, [EAX]
 
 	;; store states and exit
 	int3

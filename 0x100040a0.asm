@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00403019h
  int3
-  SQRTPS XMM1, OWORD [EAX]
+  SQRTPS XMM1, [EAX]
 
 	;; store states and exit
 	int3

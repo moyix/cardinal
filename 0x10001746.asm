@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00401000h
  int3
-  HADDPS XMM1, OWORD [EAX]
+  HADDPS XMM1, [EAX]
 
 	;; store states and exit
 	int3

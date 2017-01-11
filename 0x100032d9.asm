@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00501000h
  int3
-  PSUBB XMM1, OWORD [EAX]
+  PSUBB XMM1, [EAX]
 
 	;; store states and exit
 	int3

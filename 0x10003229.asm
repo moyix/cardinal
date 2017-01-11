@@ -293,7 +293,7 @@ main:
 	
 	;; initialization
 	MOV EAX, 00403080H
-  MOVDQU XMM1, OWORD [EAX]
+  MOVDQU XMM1, [EAX]
  int3
   PSRLW XMM1, 05h
 

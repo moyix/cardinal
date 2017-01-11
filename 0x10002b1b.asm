@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 0h
  int3
-  PMAXUW XMM1, OWORD [EAX]
+  PMAXUW XMM1, [EAX]
 
 	;; store states and exit
 	int3

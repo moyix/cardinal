@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00130000H
  int3
-  VPERMILPD XMM1, OWORD [EAX], 011h
+  VPERMILPD XMM1, [EAX], 011h
 
 	;; store states and exit
 	int3

@@ -296,8 +296,8 @@ main:
   LDMXCSR DWORD [EAX]
   MOV DWORD [EAX + 8], 0ffffffffh
   MOV DWORD [EAX + 0ch], 0ffefffffh
-  MOVDQU XMM1, OWORD [EAX]
-  MOVDQU XMM2, OWORD [EAX]
+  MOVDQU XMM1, [EAX]
+  MOVDQU XMM2, [EAX]
  int3
   PSUBD XMM1, XMM2
 

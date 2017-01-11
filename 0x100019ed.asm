@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 0h
  int3
-  MAXPS XMM1, OWORD [EAX]
+  MAXPS XMM1, [EAX]
 
 	;; store states and exit
 	int3

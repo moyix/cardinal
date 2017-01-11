@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00401000H
  int3
-  BLENDVPS XMM1, OWORD [EAX], XMM0
+  BLENDVPS XMM1, [EAX], XMM0
 
 	;; store states and exit
 	int3

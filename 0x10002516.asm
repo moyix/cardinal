@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00403019h
  int3
-  PADDUSB XMM1, OWORD [EAX]
+  PADDUSB XMM1, [EAX]
 
 	;; store states and exit
 	int3

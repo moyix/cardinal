@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00130000H
  int3
-  VPCMPESTRI XMM1, OWORD [EAX], 011h
+  VPCMPESTRI XMM1, [EAX], 011h
 
 	;; store states and exit
 	int3

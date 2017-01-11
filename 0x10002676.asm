@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00130000h
  int3
-  VPCLMULQDQ XMM1, XMM2, OWORD [EAX], 33h
+  VPCLMULQDQ XMM1, XMM2, [EAX], 33h
 
 	;; store states and exit
 	int3

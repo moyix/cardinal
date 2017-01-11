@@ -294,8 +294,8 @@ main:
 	;; initialization
 	MOV EAX, 00403000H
   MOV DWORD [EAX], 0ff7fffffh
-  MOVDQU XMM1, OWORD [EAX]
-  MOVDQU XMM2, OWORD [EAX]
+  MOVDQU XMM1, [EAX]
+  MOVDQU XMM2, [EAX]
  int3
   RSQRTPS XMM1, XMM2
 

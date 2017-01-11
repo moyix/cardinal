@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00501000h
  int3
-  MULPS XMM1, OWORD [EAX]
+  MULPS XMM1, [EAX]
 
 	;; store states and exit
 	int3

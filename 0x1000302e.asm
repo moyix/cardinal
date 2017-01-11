@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00503000h
  int3
-  VPSHUFLW XMM1, OWORD [EAX], 031h
+  VPSHUFLW XMM1, [EAX], 031h
 
 	;; store states and exit
 	int3

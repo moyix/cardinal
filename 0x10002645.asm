@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00503000H
  int3
-  PBLENDVB XMM1, OWORD [EAX], XMM0
+  PBLENDVB XMM1, [EAX], XMM0
 
 	;; store states and exit
 	int3

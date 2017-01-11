@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00503000h
  int3
-  VROUNDPD XMM1, OWORD [EAX], 031h
+  VROUNDPD XMM1, [EAX], 031h
 
 	;; store states and exit
 	int3

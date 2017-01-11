@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00130000H
  int3
-  PALIGNR XMM1, OWORD [EAX], 011h
+  PALIGNR XMM1, [EAX], 011h
 
 	;; store states and exit
 	int3

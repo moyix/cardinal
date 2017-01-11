@@ -295,7 +295,7 @@ main:
 	MOV EAX, 00403000h
   MOV DWORD [EAX], 0ffffffffh
   MOV DWORD [EAX + 4], 000fffffh
-  MOVDQU XMM1, OWORD [EAX]
+  MOVDQU XMM1, [EAX]
  int3
   MOVDQU XMM1, XMM2
 

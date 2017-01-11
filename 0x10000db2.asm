@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00403000H
   MOV DWORD [EAX], 01H
-  MOVDQU XMM1, OWORD [EAX]
+  MOVDQU XMM1, [EAX]
  int3
   VCMPSS XMM0, XMM1, XMM2, 5H
 

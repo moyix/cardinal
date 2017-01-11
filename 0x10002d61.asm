@@ -299,8 +299,8 @@ main:
   MOV DWORD [EAX + 4], 800fffffh
   MOV DWORD [EAX + 8], 0ffffffffh
   MOV DWORD [EAX + 0ch], 800fffffh
-  MOVDQU XMM1, OWORD [EAX]
-  MOVDQU XMM2, OWORD [EAX]
+  MOVDQU XMM1, [EAX]
+  MOVDQU XMM2, [EAX]
  int3
   PMOVZXWQ XMM1, XMM2
 
