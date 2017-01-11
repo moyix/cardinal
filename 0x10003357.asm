@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ECX, 00503020h
  int3
-  PSUBQ MM1, QWORD [ECX]
+  PSUBQ MM1, [ECX]
 
 	;; store states and exit
 	int3

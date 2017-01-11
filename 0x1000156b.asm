@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 0H
  int3
-  FRSTOR BYTE [EBX]
+  FRSTOR [EBX]
 
 	;; store states and exit
 	int3

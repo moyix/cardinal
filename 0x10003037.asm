@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ECX, 00401000h
  int3
-  PSHUFW MM1, QWORD [ECX], 025h
+  PSHUFW MM1, [ECX], 025h
 
 	;; store states and exit
 	int3

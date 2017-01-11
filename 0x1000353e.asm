@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ECX, 00403001h
  int3
-  PUNPCKLWD MM1, DWORD [ECX]
+  PUNPCKLWD MM1, [ECX]
 
 	;; store states and exit
 	int3

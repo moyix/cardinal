@@ -293,7 +293,7 @@ main:
 	
 	;; initialization
 	int3
- MOV DS:[07fffffffh], EAX
+ MOV [DS:07fffffffh], EAX
 
 	;; store states and exit
 	int3

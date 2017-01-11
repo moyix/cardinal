@@ -275,7 +275,7 @@ main:
 	;; initialization
 	MOV ESI, 00403080H
  INT 3
- XRSTOR BYTE [ESI]
+ XRSTOR [ESI]
  INT 3
 
 	;; store states and exit

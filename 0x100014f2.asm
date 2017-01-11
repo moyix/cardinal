@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00530000H
  int3
-  FLDENV BYTE [EBX]
+  FLDENV [EBX]
 
 	;; store states and exit
 	int3

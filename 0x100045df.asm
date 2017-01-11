@@ -295,7 +295,7 @@ main:
 	MOV AL, 0h
   MOV EDI, 00401000h
  int3
-  XLAT BYTE [EDI]
+  XLATB
 
 	;; store states and exit
 	int3

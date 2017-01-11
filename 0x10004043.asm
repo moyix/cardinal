@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00403020h
  int3
-  SIDT BYTE [EBX]
+  SIDT [EBX]
 
 	;; store states and exit
 	int3

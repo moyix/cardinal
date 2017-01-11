@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ECX, 00503020h
  int3
-  PUNPCKLDQ MM1, DWORD [ECX]
+  PUNPCKLDQ MM1, [ECX]
 
 	;; store states and exit
 	int3

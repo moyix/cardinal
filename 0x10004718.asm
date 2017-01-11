@@ -296,7 +296,7 @@ main:
   MOV EAX, 04567h
   MOV ECX, 00403000h
  int3
-  XSAVEOPT BYTE [ECX]
+  XSAVEOPT [ECX]
 
 	;; store states and exit
 	int3

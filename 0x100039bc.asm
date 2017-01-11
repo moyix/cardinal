@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00000000h
  int3
-  ROUNDSS XMM1, DWORD [EAX], 013h
+  ROUNDSS XMM1, [EAX], 013h
 
 	;; store states and exit
 	int3

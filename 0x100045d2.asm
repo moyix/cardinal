@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00000000h
  int3
-  XLAT BYTE [EBX]
+  XLATB
 
 	;; store states and exit
 	int3

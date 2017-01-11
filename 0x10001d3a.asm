@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00403007h
  int3
-  MOVHPD XMM1, QWORD [EBX]
+  MOVHPD XMM1, [EBX]
 
 	;; store states and exit
 	int3

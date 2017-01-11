@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ECX, 00130000h
  int3
-  PMULUDQ MM1, QWORD [ECX]
+  PMULUDQ MM1, [ECX]
 
 	;; store states and exit
 	int3

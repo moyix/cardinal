@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00503000h
  int3
-  XLAT BYTE [EAX]
+  XLATB
 
 	;; store states and exit
 	int3

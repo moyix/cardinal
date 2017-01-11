@@ -296,7 +296,7 @@ main:
   MOV EAX, 09abch
   MOV ECX, 00403000h
  int3
-  XSAVE BYTE [ECX]
+  XSAVE [ECX]
 
 	;; store states and exit
 	int3

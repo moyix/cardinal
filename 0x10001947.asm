@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 0h
  int3
-  LEA CX, WORD [EBX]
+  LEA CX, [EBX]
 
 	;; store states and exit
 	int3

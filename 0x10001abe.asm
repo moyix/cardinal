@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 0h
  int3
-  MINSD XMM1, QWORD [EAX]
+  MINSD XMM1, [EAX]
 
 	;; store states and exit
 	int3

@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00403023H
  int3
-  FSTENV BYTE [EBX]
+  FSTENV [EBX]
 
 	;; store states and exit
 	int3

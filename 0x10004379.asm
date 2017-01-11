@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00403019h
  int3
-  UCOMISD XMM1, QWORD [EAX]
+  UCOMISD XMM1, [EAX]
 
 	;; store states and exit
 	int3

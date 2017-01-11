@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ESI, 00403020h
  int3
-  XLAT BYTE [ESI]
+  XLATB
 
 	;; store states and exit
 	int3

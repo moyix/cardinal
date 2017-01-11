@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00130000h
  int3
-  FXSAVE BYTE [EBX]
+  FXSAVE [EBX]
 
 	;; store states and exit
 	int3

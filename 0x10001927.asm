@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00450020h
  int3
-  INVLPG BYTE [EBX]
+  INVLPG [EBX]
 
 	;; store states and exit
 	int3

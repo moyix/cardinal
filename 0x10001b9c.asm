@@ -293,7 +293,7 @@ main:
 	
 	;; initialization
 	int3
- MOV DS:[0ffffh], AX
+ MOV [DS:0ffffh], AX
 
 	;; store states and exit
 	int3

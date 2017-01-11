@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00403019h
  int3
-  MAXSD XMM1, QWORD [EAX]
+  MAXSD XMM1, [EAX]
 
 	;; store states and exit
 	int3

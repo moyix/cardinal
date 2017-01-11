@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00503000H
  int3
-  MOVHPD QWORD [EAX], XMM1
+  MOVHPD [EAX], XMM1
 
 	;; store states and exit
 	int3
