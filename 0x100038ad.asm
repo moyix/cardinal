@@ -295,7 +295,7 @@ main:
 	MOV ESI, 07fee3000h
   MOV EDI, 07fee3004h
  int3
-  REP MOVS WORD [EDI], WORD PTR [ESI]
+  REP MOVS WORD [EDI], WORD [ESI]
 
 	;; store states and exit
 	int3
@@ -312,3 +312,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h

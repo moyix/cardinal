@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ECX, 0012DFFCH
  int3
-  BOUND AX, WORD [ECX]
+  BOUND AX, [ECX]
 
 	;; store states and exit
 	int3
@@ -311,3 +311,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h

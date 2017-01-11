@@ -352,3 +352,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h

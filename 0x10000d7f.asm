@@ -296,7 +296,7 @@ main:
   MOV ESI, 00403000h
   MOV EDI, 00401030h
  int3
-  CMPS DWORD [EDI], DWORD PTR [ESI]
+  CMPSD
 
 	;; store states and exit
 	int3
@@ -313,3 +313,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h

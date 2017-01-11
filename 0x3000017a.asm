@@ -293,12 +293,12 @@ main:
 	
 	;; initialization
 	mov eax, 00403000h
-  mov dword ptr[eax], 0ffffffffh
-  mov dword ptr[eax+4], 0ffffffffh
-  mov dword ptr[eax+8], 0ffffffffh
-  mov dword ptr[eax+0ch], 0ffffffffh
+  mov dword [eax], 0ffffffffh
+  mov dword [eax+4], 0ffffffffh
+  mov dword [eax+8], 0ffffffffh
+  mov dword [eax+0ch], 0ffffffffh
   movdqu xmm1, oword [eax]
-  mov word ptr[eax], 0ffffh
+  mov word [eax], 0ffffh
  int3
   pinsrw xmm1, word [eax], 0h
 
@@ -374,3 +374,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h

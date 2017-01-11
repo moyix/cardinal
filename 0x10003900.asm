@@ -295,7 +295,7 @@ main:
 	MOV ESI, 00403021h
   MOV EDI, 00503000h
  int3
-  REPE CMPS BYTE [EDI], BYTE PTR [ESI]
+  REPE CMPSB
 
 	;; store states and exit
 	int3
@@ -312,3 +312,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h

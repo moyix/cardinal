@@ -293,16 +293,16 @@ main:
 	
 	;; initialization
 	mov eax, 00403000h
-  mov dword ptr[eax], 0ffffffffh
-  mov dword ptr[eax+4], 0ffffffffh
-  mov dword ptr[eax+8], 0ffffffffh
-  mov dword ptr[eax+0ch], 0ffffffffh
+  mov dword [eax], 0ffffffffh
+  mov dword [eax+4], 0ffffffffh
+  mov dword [eax+8], 0ffffffffh
+  mov dword [eax+0ch], 0ffffffffh
   movdqu xmm1, oword [eax]
   mov ebx, 00403020h
-  mov dword ptr[ebx], 0h
-  mov dword ptr[ebx+4], 0h
-  mov dword ptr[ebx+8], 0h
-  mov dword ptr[ebx+0ch], 0h
+  mov dword [ebx], 0h
+  mov dword [ebx+4], 0h
+  mov dword [ebx+8], 0h
+  mov dword [ebx+0ch], 0h
   movdqu xmm2, oword [ebx]
  int3
   haddps xmm1, xmm2
@@ -379,3 +379,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h

@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00503000h
  int3
-  BLENDPD XMM1, OWORD [EAX], 031h
+  BLENDPD XMM1, [EAX], 031h
 
 	;; store states and exit
 	int3
@@ -311,3 +311,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h

@@ -295,7 +295,7 @@ main:
 	MOV ESI, 0012DFFCh
   MOV EDI, 00123000h
  int3
-  REP MOVS DWORD [EDI], DWORD PTR [ESI]
+  REP MOVS DWORD [EDI], DWORD [ESI]
 
 	;; store states and exit
 	int3
@@ -312,3 +312,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h

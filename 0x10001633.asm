@@ -299,7 +299,7 @@ main:
   MOV DWORD [EAX+8], 7FFEH
   FLD TWORD [EAX]
  int3
-  FSUBP ST(1), ST(0)
+  FSUBP ST1, ST0
 
 	;; store states and exit
 	int3
@@ -316,3 +316,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h

@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 90h
   MOV ECX, 7
-  MOV EDI, OFFSET $
+  MOV EDI, $
  int3
   REP STOSB
 
@@ -313,3 +313,8 @@ HANDLER:
 	int3
 	mov EAX, 1h
 	call myexit
+
+myexit:
+    mov eax, 1h
+    mov ebx, 0h
+    int 80h
