@@ -297,7 +297,7 @@ main:
   MOV DWORD [EBX], 030h
   MOV DWORD [EBX+4], 040h
  int3
-  BOUND EAX, QWORD [EBX]
+  BOUND EAX, [EBX]
 
 	;; store states and exit
 	int3

@@ -300,7 +300,7 @@ main:
   MOV DWORD [ESI], 0ffffh
   MOV DWORD [ESI+4], 01234h
  int3
-  CMPXCHG8B QWORD [ESI]
+  CMPXCHG8B [ESI]
 
 	;; store states and exit
 	int3

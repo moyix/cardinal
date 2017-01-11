@@ -296,7 +296,7 @@ main:
   MOV EDI, 00403000h
   MOV BYTE [EDI], 07fh
  int3
-  CLFLUSH BYTE [EDI]
+  CLFLUSH [EDI]
 
 	;; store states and exit
 	int3

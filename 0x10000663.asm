@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00000000h
  int3
-  CLFLUSH BYTE [EBX]
+  CLFLUSH [EBX]
 
 	;; store states and exit
 	int3

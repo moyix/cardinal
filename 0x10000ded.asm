@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 0012DFFCH
  int3
-  CMPXCHG8B QWORD [EAX]
+  CMPXCHG8B [EAX]
 
 	;; store states and exit
 	int3

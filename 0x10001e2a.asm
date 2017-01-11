@@ -295,7 +295,7 @@ main:
 	MOV ESI, 0h
   MOV EDI, 00403000h
  int3
-  MOVS BYTE [EDI], BYTE [ESI]
+  MOVSB
 
 	;; store states and exit
 	int3

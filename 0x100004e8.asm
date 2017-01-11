@@ -297,7 +297,7 @@ main:
   MOV WORD [EBX], 030h
   MOV WORD [EBX+2], 040h
  int3
-  BOUND AX, DWORD [EBX]
+  BOUND AX, [EBX]
 
 	;; store states and exit
 	int3

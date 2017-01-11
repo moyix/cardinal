@@ -296,7 +296,7 @@ main:
   MOV DX, 07fh
   MOV ECX, 07fh
  int3
-  REP INS WORD [EDI], DX
+  REP INSW
 
 	;; store states and exit
 	int3

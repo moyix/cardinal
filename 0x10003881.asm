@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EDI, 00530000h
  int3
-  REP INS BYTE [EDI], DX
+  REP INSB
 
 	;; store states and exit
 	int3

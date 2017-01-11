@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ECX, 0012FFFCH
  int3
-  BOUND AX, WORD [ECX]
+  BOUND AX, [ECX]
 
 	;; store states and exit
 	int3

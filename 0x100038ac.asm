@@ -295,7 +295,7 @@ main:
 	MOV ESI, 00130000H
   MOV EDI, 00403200h
  int3
-  REP MOVS WORD [EDI], WORD [ESI]
+  REP MOVSW
 
 	;; store states and exit
 	int3

@@ -296,7 +296,7 @@ main:
   MOV DX, 08000h
   MOV ECX, 08000h
  int3
-  REP INS BYTE [EDI], DX
+  REP INSB
 
 	;; store states and exit
 	int3

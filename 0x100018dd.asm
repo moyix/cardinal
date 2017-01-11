@@ -295,7 +295,7 @@ main:
 	MOV EDI, 00403020h
   MOV DX, 08000h
  int3
-  INS WORD [EDI], DX
+  INSW
 
 	;; store states and exit
 	int3
