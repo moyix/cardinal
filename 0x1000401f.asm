@@ -1,6 +1,7 @@
 section .data
 	value1: dq 0h
 section .text
+global main
 main:
 	int3			; store states for vertical comparison
 
