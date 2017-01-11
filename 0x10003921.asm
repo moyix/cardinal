@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ESI, 00401000h
  int3
-  REPE SCAS BYTE [ESI]
+  REPE SCASB
 
 	;; store states and exit
 	int3

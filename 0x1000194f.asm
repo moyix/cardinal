@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00403012h
  int3
-  LODS BYTE [EBX]
+  LODSB
 
 	;; store states and exit
 	int3

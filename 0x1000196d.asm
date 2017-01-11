@@ -295,7 +295,7 @@ main:
 	MOV EBX, 00403020h
   MOV DWORD [EBX], 07fffffffh
  int3
-  LODS DWORD [EBX]
+  LODSD
 
 	;; store states and exit
 	int3

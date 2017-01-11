@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EAX, 00503000h
  int3
-  REPNE SCAS BYTE [EAX]
+  REPNE SCASB
 
 	;; store states and exit
 	int3

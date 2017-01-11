@@ -295,7 +295,7 @@ main:
 	MOV EBX, 00403020h
   MOV DWORD [EBX], 080000000h
  int3
-  SCAS DWORD [EBX]
+  SCASD
 
 	;; store states and exit
 	int3

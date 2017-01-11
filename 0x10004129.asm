@@ -295,7 +295,7 @@ main:
 	MOV AL, 0h
   MOV EBX, 00403000h
  int3
-  STOS BYTE [EBX]
+  STOSB
 
 	;; store states and exit
 	int3

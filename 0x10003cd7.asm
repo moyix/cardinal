@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00403000h
  int3
-  SCAS BYTE [EBX]
+  SCASB
 
 	;; store states and exit
 	int3

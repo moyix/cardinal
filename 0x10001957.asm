@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ESI, 00401000h
  int3
-  LODS BYTE [ESI]
+  LODSB
 
 	;; store states and exit
 	int3

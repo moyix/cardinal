@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 0h
  int3
-  REP STOS DWORD [EBX]
+  REP STOSD
 
 	;; store states and exit
 	int3

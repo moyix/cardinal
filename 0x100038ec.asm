@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ESI, 00130000h
  int3
-  REP STOS WORD [ESI]
+  REP STOSW
 
 	;; store states and exit
 	int3

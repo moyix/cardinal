@@ -296,7 +296,7 @@ main:
   MOV EDI, 00403000h
   MOV DWORD [EDI], 07fffffffh
  int3
-  REPNE SCAS DWORD [EBX]
+  REPNE SCASD
 
 	;; store states and exit
 	int3

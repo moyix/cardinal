@@ -296,7 +296,7 @@ main:
   MOV EDI, 00403000h
   MOV BYTE [EDI], 080h
  int3
-  REP STOS BYTE [EDI]
+  REP STOSB
 
 	;; store states and exit
 	int3

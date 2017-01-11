@@ -295,7 +295,7 @@ main:
 	MOV AL, 0h
   MOV EDI, 00401000h
  int3
-  REPNE SCAS BYTE [EDI]
+  REPNE SCASB
 
 	;; store states and exit
 	int3

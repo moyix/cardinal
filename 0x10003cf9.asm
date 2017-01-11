@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 0h
  int3
-  SCAS DWORD [EBX]
+  SCASD
 
 	;; store states and exit
 	int3

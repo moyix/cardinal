@@ -295,7 +295,7 @@ main:
 	MOV AL, 023h
   MOV EBX, 00401000h
  int3
-  REPNE SCAS BYTE [EBX]
+  REPNE SCASB
 
 	;; store states and exit
 	int3

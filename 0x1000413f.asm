@@ -295,7 +295,7 @@ main:
 	MOV AX, 07fffh
   MOV EDI, 00401020h
  int3
-  STOS WORD [EDI]
+  STOSW
 
 	;; store states and exit
 	int3

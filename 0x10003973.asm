@@ -295,7 +295,7 @@ main:
 	MOV AX, 07fffh
   MOV EDI, 00403020h
  int3
-  REPNE SCAS WORD [EDI]
+  REPNE SCASW
 
 	;; store states and exit
 	int3

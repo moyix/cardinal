@@ -295,7 +295,7 @@ main:
 	MOV DX, 012h
   MOV ESI, 00401000h
  int3
-  OUTS DX, BYTE [ESI]
+  OUTSB
 
 	;; store states and exit
 	int3

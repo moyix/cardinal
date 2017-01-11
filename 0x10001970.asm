@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 0h
  int3
-  LODS DWORD [EBX]
+  LODSD
 
 	;; store states and exit
 	int3

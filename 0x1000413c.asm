@@ -296,7 +296,7 @@ main:
   MOV EDI, 00403000h
   MOV WORD [EDI], 07fffh
  int3
-  STOS WORD [EDI]
+  STOSW
 
 	;; store states and exit
 	int3

@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV EBX, 00403012h
  int3
-  REPNE SCAS BYTE [EBX]
+  REPNE SCASB
 
 	;; store states and exit
 	int3

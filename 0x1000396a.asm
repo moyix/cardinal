@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ESI, 00403020h
  int3
-  REPNE SCAS WORD [ESI]
+  REPNE SCASW
 
 	;; store states and exit
 	int3

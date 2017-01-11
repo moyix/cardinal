@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ESI, 00130000h
  int3
-  LODS DWORD [ESI]
+  LODSD
 
 	;; store states and exit
 	int3

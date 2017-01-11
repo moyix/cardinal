@@ -294,7 +294,7 @@ main:
 	;; initialization
 	MOV ESI, 0h
  int3
-  SCAS WORD [ESI]
+  SCASW
 
 	;; store states and exit
 	int3

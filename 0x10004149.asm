@@ -296,7 +296,7 @@ main:
   MOV EDI, 00403000h
   MOV DWORD [EDI], 07fffffffh
  int3
-  STOS DWORD [EBX]
+  STOSD
 
 	;; store states and exit
 	int3
