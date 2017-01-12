@@ -7,11 +7,11 @@ so that they assemble under nasm and can be built on Linux.
 
 To build:
 
-    ./build.sh
+    cd testcases && ../build.sh
 
 To clean up:
 
-    ./build.sh clean
+    cd testcases && ../build.sh clean
 
 To run the tests:
 
