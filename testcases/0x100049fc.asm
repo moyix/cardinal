@@ -3,6 +3,8 @@ section .data
 section .text
 global main
 main:
+	call setupstack
+	mov esp, 012ff8ch
 	int3			; store states for vertical comparison
 
 
@@ -358,3 +360,14 @@ myexit:
     mov eax, 1h
     mov ebx, 0h
     int 80h
+
+setupstack:
+    mov eax, 0c0h           ; mmap_pgoff
+    mov ebx, 012e000h       ; addr
+    mov ecx, 2000h          ; size
+    mov edx, 03h            ; prot = PROT_READ|PROT_WRITE
+    mov esi, 32h            ; flags = MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS
+    mov edi, 0ffffffffh     ; fd = -1
+    mov ebp, 0              ; offset
+    int 80h
+    ret

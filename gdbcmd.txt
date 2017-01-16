@@ -4,18 +4,18 @@ info all-registers
 p/x $_siginfo
 x/4096xb 0x401000
 x/1024xb 0x403000
-x/139264xb 0xfffdc000
+x/8192xb 0x12e000
 c
 info all-registers
 p/x $_siginfo
 x/4096xb 0x401000
 x/1024xb 0x403000
-x/139264xb 0xfffdc000
+x/8192xb 0x12e000
 c
 info all-registers
 p/x $_siginfo
 x/4096xb 0x401000
 x/1024xb 0x403000
-x/139264xb 0xfffdc000
+x/8192xb 0x12e000
 c
 q
