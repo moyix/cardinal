@@ -4,7 +4,7 @@ from colorama import Fore, Back, Style
 import gzip
 import sys, os, re
 
-r = re.compile(r"""
+r_q = re.compile(r"""
 Program\ received\ signal\ (?P<signal>[A-Z]+),.*\n
 .*\n
 eax\ +(?P<eax>0x[0-9a-f]+) .*$\n
@@ -56,11 +56,70 @@ mm4\ +{uint64\ =\ (?P<mm4>0x[0-9a-f]+),.*$\n
 mm5\ +{uint64\ =\ (?P<mm5>0x[0-9a-f]+),.*$\n
 mm6\ +{uint64\ =\ (?P<mm6>0x[0-9a-f]+),.*$\n
 mm7\ +{uint64\ =\ (?P<mm7>0x[0-9a-f]+),.*$\n
-[^{]+(?P<siginfo>{.*})$\n
+([^{]+(?P<siginfo>{.*})$\n)?
 (?P<text>(0x[0-9a-f]+.*:.*\n){512})
 (?P<data>(0x[0-9a-f]+.*:.*\n){128})
 (?P<stack>(0x[0-9a-f]+.*:.*\n){1024})
 """, re.VERBOSE|re.MULTILINE)
+
+r_n = re.compile(r"""
+Program\ received\ signal\ (?P<signal>[A-Z]+),.*\n
+.*\n
+eax\ +(?P<eax>0x[0-9a-f]+) .*$\n
+ecx\ +(?P<ecx>0x[0-9a-f]+) .*$\n
+edx\ +(?P<edx>0x[0-9a-f]+) .*$\n
+ebx\ +(?P<ebx>0x[0-9a-f]+) .*$\n
+esp\ +(?P<esp>0x[0-9a-f]+) .*$\n
+ebp\ +(?P<ebp>0x[0-9a-f]+) .*$\n
+esi\ +(?P<esi>0x[0-9a-f]+) .*$\n
+edi\ +(?P<edi>0x[0-9a-f]+) .*$\n
+eip\ +(?P<eip>0x[0-9a-f]+) .*$\n
+eflags\ +(?P<eflags>0x[0-9a-f]+).*\[(?P<eflags_names>.*)\].*$\n
+cs\ +(?P<cs>0x[0-9a-f]+) .*$\n
+ss\ +(?P<ss>0x[0-9a-f]+) .*$\n
+ds\ +(?P<ds>0x[0-9a-f]+) .*$\n
+es\ +(?P<es>0x[0-9a-f]+) .*$\n
+fs\ +(?P<fs>0x[0-9a-f]+) .*$\n
+gs\ +(?P<gs>0x[0-9a-f]+) .*$\n
+st0.*\(raw\ (?P<st0>0x[0-9a-f]+)\).*$\n
+st1.*\(raw\ (?P<st1>0x[0-9a-f]+)\).*$\n
+st2.*\(raw\ (?P<st2>0x[0-9a-f]+)\).*$\n
+st3.*\(raw\ (?P<st3>0x[0-9a-f]+)\).*$\n
+st4.*\(raw\ (?P<st4>0x[0-9a-f]+)\).*$\n
+st5.*\(raw\ (?P<st5>0x[0-9a-f]+)\).*$\n
+st6.*\(raw\ (?P<st6>0x[0-9a-f]+)\).*$\n
+st7.*\(raw\ (?P<st7>0x[0-9a-f]+)\).*$\n
+fctrl\ +(?P<fctrl>0x[0-9a-f]+) .*$\n
+fstat\ +(?P<fstat>0x[0-9a-f]+) .*$\n
+ftag\ +(?P<ftag>0x[0-9a-f]+) .*$\n
+fiseg\ +(?P<fiseg>0x[0-9a-f]+) .*$\n
+fioff\ +(?P<fioff>0x[0-9a-f]+) .*$\n
+foseg\ +(?P<foseg>0x[0-9a-f]+) .*$\n
+fooff\ +(?P<fooff>0x[0-9a-f]+) .*$\n
+fop\ +(?P<fop>0x[0-9a-f]+) .*$\n
+mxcsr\ +(?P<mxcsr>0x[0-9a-f]+).*\[(?P<mxcsr_names>.*)\].*$\n
+ymm0\ +{.*v2_int128\ =\ {(?P<xmm0>0x[0-9a-f]+),.*$\n
+ymm1\ +{.*v2_int128\ =\ {(?P<xmm1>0x[0-9a-f]+),.*$\n
+ymm2\ +{.*v2_int128\ =\ {(?P<xmm2>0x[0-9a-f]+),.*$\n
+ymm3\ +{.*v2_int128\ =\ {(?P<xmm3>0x[0-9a-f]+),.*$\n
+ymm4\ +{.*v2_int128\ =\ {(?P<xmm4>0x[0-9a-f]+),.*$\n
+ymm5\ +{.*v2_int128\ =\ {(?P<xmm5>0x[0-9a-f]+),.*$\n
+ymm6\ +{.*v2_int128\ =\ {(?P<xmm6>0x[0-9a-f]+),.*$\n
+ymm7\ +{.*v2_int128\ =\ {(?P<xmm7>0x[0-9a-f]+),.*$\n
+mm0\ +{uint64\ =\ (?P<mm0>0x[0-9a-f]+),.*$\n
+mm1\ +{uint64\ =\ (?P<mm1>0x[0-9a-f]+),.*$\n
+mm2\ +{uint64\ =\ (?P<mm2>0x[0-9a-f]+),.*$\n
+mm3\ +{uint64\ =\ (?P<mm3>0x[0-9a-f]+),.*$\n
+mm4\ +{uint64\ =\ (?P<mm4>0x[0-9a-f]+),.*$\n
+mm5\ +{uint64\ =\ (?P<mm5>0x[0-9a-f]+),.*$\n
+mm6\ +{uint64\ =\ (?P<mm6>0x[0-9a-f]+),.*$\n
+mm7\ +{uint64\ =\ (?P<mm7>0x[0-9a-f]+),.*$\n
+([^{]+(?P<siginfo>{.*})$\n)?
+(?P<text>(0x[0-9a-f]+.*:.*\n){512})
+(?P<data>(0x[0-9a-f]+.*:.*\n){128})
+(?P<stack>(0x[0-9a-f]+.*:.*\n){1024})
+""", re.VERBOSE|re.MULTILINE)
+
 
 RAW = 0
 INIT = 1
@@ -105,6 +164,8 @@ if __name__ == "__main__":
     data1 = gzip.open(sys.argv[1]).read()
     data2 = gzip.open(sys.argv[2]).read()
 
+    r = r_n if 'ymm0' in data1 else r_q
     states1 = [m.groupdict() for m in r.finditer(data1)]
+    r = r_n if 'ymm0' in data2 else r_q
     states2 = [m.groupdict() for m in r.finditer(data2)]
     print os.path.basename(sys.argv[1]), compare_states(states1, states2)
